@@ -4,7 +4,7 @@ public class Expense extends Transaction {
 
     private EExpenseCategory category;
 
-    public Expense(double amount, String date, category) {
+    public Expense(double amount, String date, EExpenseCategory category) {
         super(amount, date);
         this.category = category;
 

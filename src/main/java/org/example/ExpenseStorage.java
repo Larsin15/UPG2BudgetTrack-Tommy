@@ -1,16 +1,21 @@
 package org.example;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
-import java.io.IOException;
+
+import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class ExpenseStorage {
 
+    private Map<String, Expense> expensesList;
     private ArrayList<Expense> expenses;
-    private String filename; = "src/main/expenses.json";
+    Expense expense = new Expense(300.75, "2024-10-15", EExpenseCategory.MAT);
     Gson gson = new Gson();
-    String json = gson.toJson(expenses);
 
 
     public void addExpense(Expense expense) {
@@ -33,8 +38,18 @@ public class ExpenseStorage {
     }
 
     public void readExpenses() throws IOException {
-        Type gson = new GsonToken<Map<String, Expense>>() {}.getT
+        Reader reader = new FileReader("expenses.json");
+        Expense expense = gson.fromJson(reader, Expense.class);
+        expensesList = new HashMap<>();
 
+
+
+    }
+
+    public void saveExpenses() throws IOException {
+        FileWriter writer = new FileWriter("expenses.json");
+        gson.toJson(expensesList, writer);
+        writer.close();
     }
 
 }
