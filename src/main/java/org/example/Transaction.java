@@ -1,11 +1,13 @@
 package org.example;
 
+import java.util.Date;
+
 public class Transaction {
 
     private double amount;
-    private String date;
+    private Date date;
 
-    public Transaction(double amount, String date) {
+    public Transaction(double amount, Date date) {
         this.amount = amount;
         this.date = date;
     }
@@ -18,11 +20,11 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }
