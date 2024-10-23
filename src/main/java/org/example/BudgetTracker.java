@@ -21,7 +21,8 @@ public class BudgetTracker {
     // Main-metoden där programmet startar
     public static void main(String[] args) {
         BudgetTracker budgetTracker = new BudgetTracker();
-        budgetTracker.run();  // Starta programmet med run()
+        userStorage.readUsers("users.txt");
+        budgetTracker.run();  // Starta programmet
     }
 
     public void run() {
@@ -46,6 +47,7 @@ public class BudgetTracker {
                         break;
                     case 3:
                         menuActive = false;
+                        userStorage.saveUsers("users.txt");
                         System.out.println("Välkommen åter.");
                         break;
                     default:
