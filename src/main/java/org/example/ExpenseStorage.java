@@ -14,6 +14,7 @@ public class ExpenseStorage {
 
     public void addExpense(Expense expense) {
         expensesList.put(expense.getId(), expense);
+        System.out.println("Datum: " + expense.getId() + " -" + expense.getAmount() + " " + expense.getCategory());
     }
 
     public boolean removeExpense(String expenseId) {
@@ -31,6 +32,7 @@ public class ExpenseStorage {
     }
 
     public Collection<Expense> getExpenses() {
+
         return expensesList.values();
     }
 

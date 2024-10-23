@@ -9,7 +9,7 @@ public class Expense extends Transaction {
     private String id;
 
 
-    public Expense(double amount, Date date, EExpenseCategory category) {
+    public Expense(Double amount, Date date, EExpenseCategory category) {
         super(amount, date);
         this.id = generateIdFromDate(date);
         this.category = category;
@@ -17,7 +17,7 @@ public class Expense extends Transaction {
     }
 
     private String generateIdFromDate(Date date) {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy - Month - dd | HH:mmss ");
         return formatter.format(date);
     }
 

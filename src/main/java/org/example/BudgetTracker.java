@@ -27,6 +27,7 @@ public class BudgetTracker {
 
     public void run() {
         boolean menuActive = true;
+        boolean userActive = true;
 
         while (menuActive) {
             System.out.println("\nVälj alternativ 1-3:"
@@ -41,6 +42,11 @@ public class BudgetTracker {
                 switch (menuChoice) {
                     case 1:
                         pickUser();
+                        if (currentUser != null) {
+                            switch (userMenu) {
+                                case 1:
+                            }
+                        }
                         break;
                     case 2:
                         createUser();
