@@ -1,20 +1,21 @@
 package org.example;
 
+import java.util.Scanner;
 import java.util.UUID;
 
 public class User {
 
     private String firstName;
     private String lastName;
-    private String userId;
+    private Integer userId;
 
-    public User(String firstName, String lastName) {
+    public User(String firstName, String lastName, Integer userId) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userId = lastName + UUID.randomUUID().toString();
+        this.userId = userId;
     }
 
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
@@ -35,7 +36,4 @@ public class User {
         this.lastName = lastName;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
 }

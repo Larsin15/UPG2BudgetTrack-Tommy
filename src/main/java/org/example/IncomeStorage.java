@@ -21,7 +21,7 @@ public class IncomeStorage {
         incomeList.put(income.getId(), income);
     }
 
-    public boolean removeIncome(String expenseId) {
+    public boolean removeIncome(String incomeId) {
         return incomeList.remove(incomeId) != null;
     }
 
@@ -64,4 +64,4 @@ public class IncomeStorage {
 
 }
 
-}
+

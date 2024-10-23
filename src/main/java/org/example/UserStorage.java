@@ -5,13 +5,26 @@ import com.google.gson.Gson;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class UserStorage {
-    private Map<String, User> usersList;
+    private Map<Integer, User> usersList = new HashMap<>();
     private String fileName = "users.txt";
 
-    public UserStorage() {
+    public void addUser(Integer userId, User user) {
+        usersList.put(userId, user);
+        System.out.println("Ditt login med ID: " + userId + " är skapat.");
+    }
+
+    public Map<Integer, User> getUsers() {
+        return usersList;
+    }
+
+    public User getUserById(int userId) {
+        return usersList.get(userId);
     }
 
     public void readUsers(String fileName) {
