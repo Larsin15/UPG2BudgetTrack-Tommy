@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
@@ -16,6 +15,8 @@ public class BudgetTracker {
     // Konstruktorn för BudgetTracker
     public BudgetTracker() {
         scanner = new Scanner(System.in);
+        expenseStorage = new ExpenseStorage();
+        incomeStorage = new IncomeStorage();
     }
 
     // Main-metoden där programmet startar
@@ -24,10 +25,8 @@ public class BudgetTracker {
         userStorage.readUsers("users.txt");
         budgetTracker.run();  // Starta programmet
     }
-
     public void run() {
         boolean menuActive = true;
-        boolean userActive = true;
 
         while (menuActive) {
             System.out.println("\nVälj alternativ 1-3:"
@@ -43,9 +42,7 @@ public class BudgetTracker {
                     case 1:
                         pickUser();
                         if (currentUser != null) {
-                            switch (userMenu) {
-                                case 1:
-                            }
+                            userMenu();
                         }
                         break;
                     case 2:
@@ -104,5 +101,48 @@ public class BudgetTracker {
         userStorage.addUser(newUserId, newUser);
 
         System.out.println("Användare skapad: " + firstName + " " + lastName + " med ID: " + newUserId);
+    }
+
+    private void userMenu() {
+        boolean userMenuActive = true;
+
+        while (userMenuActive) {
+            System.out.println("\n1: Utgifter"
+                    + "\n2: Ikomster"
+                    + "\n3: Budget"
+                    + "\n4: Logga ut");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    manageExpense();
+                    break;
+                case 2:
+                    manageIncome();
+                    break;
+                case 3:
+                    manageBudget();
+                    break;
+                case 4:
+                    userMenuActive = false;
+                    break;
+                default:
+                    System.out.println("Ogiltigt val");
+                    break;
+            }
+        }
+    }
+
+    private void manageExpense() {
+
+    }
+
+    private void manageIncome() {
+
+    }
+
+    private void manageBudget() {
+
     }
 }

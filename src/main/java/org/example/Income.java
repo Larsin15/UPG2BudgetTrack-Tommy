@@ -16,7 +16,7 @@ public class Income extends Transaction {
     }
 
     private String generateIdFromDate(Date date) {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy - MMMM - dd | HH:mm:ss ");
         return formatter.format(date);
     }
 

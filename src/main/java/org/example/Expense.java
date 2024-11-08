@@ -17,7 +17,7 @@ public class Expense extends Transaction {
     }
 
     private String generateIdFromDate(Date date) {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy - Month - dd | HH:mmss ");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy - MMMM - dd | HH:mm:ss ");
         return formatter.format(date);
     }
 
