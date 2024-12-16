@@ -34,6 +34,7 @@ public class ExpenseStorage {
     public Collection<Expense> getExpenses() {
 
         return expensesList.values();
+
     }
 
     public void readExpenses(String fileName) {

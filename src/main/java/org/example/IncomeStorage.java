@@ -12,22 +12,23 @@ import java.util.Map;
 
 public class IncomeStorage {
 
-    private Map<String, Income> incomeList = new HashMap<>();
+    private Map<Integer, Income> incomeList = new HashMap<>();
     private String fileName = "incomes.json";
     Income income = new Income(300.75, new Date(), EIncomeCategory.LÖN);
 
 
     public void addIncome(Income income) {
-        incomeList.put(income.getId(), income);
+        incomeList.put(Integer.valueOf(income.getId()), income);
+        System.out.println("Datum: " + income.getId() + " -" + income.getAmount() + income.getCategory());
     }
 
     public boolean removeIncome(String incomeId) {
         return incomeList.remove(incomeId) != null;
     }
 
-    public boolean updateIncome(String incomeId, Income newIncome) {
+    public boolean updateIncome(int incomeId, Income newIncome) {
         if (incomeList.containsKey(incomeId)) {
-            incomeList.put(incomeId, newIncome);
+            incomeList.put(Integer.valueOf(String.valueOf(incomeId)), newIncome);
             return true;
         } else {
             System.out.println("Ingen utgift med ID " + incomeId + " finns inte");
@@ -45,7 +46,7 @@ public class IncomeStorage {
             Income[] readIncomes = gson.fromJson(reader, Income[].class);
             incomeList.clear();
             for (Income income : readIncomes) {
-                incomeList.put(income.getId(), income);
+                incomeList.put(Integer.valueOf(income.getId()), income);
             }
         } catch (IOException e) {
             e.printStackTrace();

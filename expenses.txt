@@ -1,0 +1,1 @@
+[{"category":"MAT","id":"2024 - December - 16 | 14:48:11 ","amount":200.0,"date":"Dec 16, 2024, 2:48:11 PM"},{"category":"HUSHÅLL","id":"2024 - November - 14 | 07:44:07 ","amount":500.0,"date":"Nov 14, 2024, 7:44:07 AM"}]
